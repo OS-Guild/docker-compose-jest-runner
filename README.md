@@ -5,6 +5,7 @@ This package allows to run tests that use `docker-compose` and supports multi-st
 ## How it works?
 
 This runner creates docker-compose services in stopped state and then starts them accordingly to the stages. It will start the new stage only when all the services on current one will be running. When all the stages are done the actual Jest tests will be run. After the tests will be completed the services will be teared down.
+
 ## Setup
 
 1. Run `npm install --save-dev docker-compose-jest-runner`
