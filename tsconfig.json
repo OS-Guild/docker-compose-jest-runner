@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "target": "ES2017",
+    "types": ["node", "jest"]
+  },
+  "include": ["src/**/*"]
+}

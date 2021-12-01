@@ -1,0 +1,17 @@
+files:
+  - ./tests/docker-compose.yml
+timeout: 2000
+interval: 100
+stages:
+  - name: Infra
+    services:
+      - name: mongo
+        check: 'tcp:localhost:27017'
+  - name: Service
+    services:
+      - name: api
+        logs: true
+        check:
+          port: 3000
+          protocol: http-get
+          path: /posts

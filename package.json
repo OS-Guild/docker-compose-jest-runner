@@ -1,0 +1,40 @@
+{
+  "name": "docker-compose-jest-runner",
+  "version": "0.1.0",
+  "description": "Jest Runner for setting up docker-compose environment by stages",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "DC_JEST_RUNNER_CONFIG=tests/config.yml jest --config tests/jest.config.js"
+  },
+  "keywords": [],
+  "author": "Alex Kotler Fux <alexander@soluto.com>",
+  "license": "ISC",
+  "engines": {
+    "node": "^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0"
+  },
+  "dependencies": {
+    "docker-compose": "^0.23.14",
+    "jest-runner": "^27.4.2",
+    "js-yaml": "^4.1.0",
+    "wait-on": "^6.0.0"
+  },
+  "devDependencies": {
+    "@jest/types": "^27.4.2",
+    "@types/jest": "^27.0.3",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^16.11.11",
+    "@types/wait-on": "^5.3.1",
+    "jest": "^27.4.2",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  }
+}
