@@ -1,0 +1,33 @@
+name: Publish New Version
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '16'
+
+      - name: Automated Version Bump
+        uses: phips28/gh-action-bump-version@v9.0.1
+        with:
+          tag-prefix:  'v'
+          commit-message: 'CI: bumps version to {{version}} [skip ci]'
+
+      - name: Run npm install
+        run: npm ci
+        env:
+          NODE_ENV: production
+
+      - name: Publish
+        run: npm publish
