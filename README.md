@@ -93,3 +93,8 @@ Look [here](https://github.com/jeffbski/wait-on#usage) for more details regardin
     ```sh
     npm run test
     ```
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
